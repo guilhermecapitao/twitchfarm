@@ -1,0 +1,1 @@
+Global $chat_input = 'chat_input.png'
