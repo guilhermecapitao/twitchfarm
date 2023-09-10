@@ -1,6 +1,5 @@
 Global $PATH = 'C:\twitchfarm_images\'
 Global $browserTab = '[TITLE:CSRfps; CLASS:Chrome_WidgetWin_1]'
-Global $seconds = 20 ;; 610 ;;10min and 10 sec
 
 ;~ ############# Screen Area #############
 Global $screenTop = 0

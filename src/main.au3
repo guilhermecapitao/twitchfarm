@@ -11,27 +11,21 @@
 
 #include "./functions/initialization.au3"
 #include "./functions/refreshFarm.au3"
-#include "./functions/setTime.au3"
 
 Local $firstResize = True
 
-While $firstResize 
-	initialization()
-	$firstResize = False
-WEnd
-
 While True
-	setTime()
-	refreshTimer()
+	If $firstResize Then
+		initialization()
+		$firstResize = False
+	EndIf
 
-	;~ If _ImageSearchArea($PATH&$chat_input, 1, $screenTop, $screenLeft, $screenRight, $screenBottom, $x, $y, 50, 0) Then
-    ;~     MouseMove("left", 1)
-	;~ 	Sleep(2000)
-	;~ 	MouseClick("left", 1)
-	;~ 	Sleep(2000)
-	;~ 	Send("!rank")
-	;~ 	Sleep(5000)
-    ;~ EndIf
-
+    Local $startTime = TimerInit()
+    While True
+        If TimerDiff($startTime) >= 660000 Then
+            refreshTimer()
+            $startTime = TimerInit()
+        EndIf
+    WEnd
 WEnd
 

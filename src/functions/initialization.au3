@@ -1,10 +1,9 @@
 Func initialization()
-	AutoItSetOption("WinTitleMatchMode",2)
+	AutoItSetOption("WinTitleMatchMode", 2)
 
 	WinActivate($browserTab)
-	
+
 	Local $chromeTabActive = WinWaitActive($browserTab, '', 10)
-	WinSetOnTop($chromeTabActive, '',  $WINDOWS_ONTOP)
 
 	WinMove($chromeTabActive, '', 0, 0, 1200, 680)
 
@@ -12,28 +11,16 @@ Func initialization()
 	MouseMove(200, 200)
 	Sleep(5000)
 
-	MouseWheel($MOUSE_WHEEL_DOWN, 10)
-	Sleep(200)
-	MouseWheel($MOUSE_WHEEL_DOWN, 10)
-	Sleep(200)
-	MouseWheel($MOUSE_WHEEL_DOWN, 10)
-	Sleep(200)
-	MouseWheel($MOUSE_WHEEL_DOWN, 10)
-	Sleep(200)
-	MouseWheel($MOUSE_WHEEL_DOWN, 10)
+	For $i = 1 To 5
+		MouseWheel($MOUSE_WHEEL_DOWN, 10)
+		Sleep(200)
+	Next
+
 	Sleep(5000)
 
-	MouseWheel($MOUSE_WHEEL_UP, 10)
-	Sleep(200)
-	MouseWheel($MOUSE_WHEEL_UP, 10)
-	Sleep(200)
-	MouseWheel($MOUSE_WHEEL_UP, 10)
-	Sleep(200)
-	MouseWheel($MOUSE_WHEEL_UP, 10)
-	Sleep(200)
-	MouseWheel($MOUSE_WHEEL_UP, 10)
-	Sleep(200)
-	MouseWheel($MOUSE_WHEEL_UP, 10)
-	Sleep(200)
+	For $i = 1 To 6
+		MouseWheel($MOUSE_WHEEL_UP, 10)
+		Sleep(200)
+	Next
 	
 EndFunc
